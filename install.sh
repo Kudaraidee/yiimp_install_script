@@ -173,16 +173,26 @@
     sudo apt -y update
 
     if [[ ("$DISTRO" == "16") ]]; then
+    echo
+    echo -e "$GREEN DISTO == 16 $COL_RESET"
+
     sudo apt -y install php7.3-fpm php7.3-opcache php7.3 php7.3-common php7.3-gd php7.3-mysql php7.3-imap php7.3-cli \
-    php7.3-cgi php-pear php-auth imagemagick libruby php7.3-curl php7.3-intl php7.3-pspell mcrypt\
-    php7.3-recode php7.3-sqlite3 php7.3-tidy php7.3-xmlrpc php7.3-xsl memcached php-memcache php-imagick php-gettext php7.3-zip php7.3-mbstring
+    php7.3-cgi php-pear imagemagick libruby php7.3-curl php7.3-intl php7.3-pspell mcrypt\
+    php7.3-sqlite3 php7.3-tidy php7.3-xmlrpc php7.3-xsl memcached php-memcache php-imagick php-gettext php7.3-zip php7.3-mbstring
+    #ERROR not aviable php-auth php7.3-recode 
+    
     #sudo phpenmod mcrypt
     #sudo phpenmod mbstring
     else
+    echo
+    echo -e "$GREEN DISTRO != 16 $COL_RESET"
+
     sudo apt -y install php7.3-fpm php7.3-opcache php7.3 php7.3-common php7.3-gd php7.3-mysql php7.3-imap php7.3-cli \
     php7.3-cgi php-pear imagemagick libruby php7.3-curl php7.3-intl php7.3-pspell mcrypt\
     php7.3-recode php7.3-sqlite3 php7.3-tidy php7.3-xmlrpc php7.3-xsl memcached php7.3-memcache php7.3-memcached php-imagick php-gettext php7.3-zip php7.3-mbstring \
     libpsl-dev libnghttp2-dev
+    #ERROR not aviable php7.3-recode 
+
     fi
     sleep 5
     sudo systemctl start php7.3-fpm
@@ -374,7 +384,7 @@
 
     # Compil Blocknotify
     cd ~
-    git clone https://github.com/Kudaraidee/yiimp.git
+    git clone https://github.com/UserAfterBan/yiimp.git
     cd $HOME/yiimp/blocknotify
     sudo sed -i 's/tu8tu5/'$blckntifypass'/' blocknotify.cpp
     make -j$((`nproc`+1))
