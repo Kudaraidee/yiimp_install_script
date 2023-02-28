@@ -20,14 +20,14 @@ Connect on your VPS =>
 - su - pool
 - sudo apt -y install git
 - git clone https://github.com/Kudaraidee/yiimp_install_script.git
-- cd yiimp_install_scrypt/
+- cd yiimp_install_script/
 - bash install.sh (DO NOT RUN THE SCRIPT AS ROOT or SUDO)
 - At the end, you MUST REBOOT to finalize installation...
 
 Finish !
 
 - Go http://xxx.xxx.xxx.xxx or https://xxx.xxx.xxx.xxx (if you have chosen LetsEncrypt SSL). Enjoy !
-- Go http://xxx.xxx.xxx.xxx/site/myadmin or https://xxx.xxx.xxx.xxx/site/myadmin to access Panel Admin
+- Go http://xxx.xxx.xxx.xxx/site/myadmin or https://xxx.xxx.xxx.xxx/site/myadmin to access AdminPanel 
 
 If you are issue after installation (nginx,mariadb... not found), use this script : bash install-debug.sh (watch the log during installation)
 
